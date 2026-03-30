@@ -15,27 +15,29 @@ public class SucursalService implements ISucursalService {
 
     @Override
     public List<Sucursal> getSucursales() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Sucursal> listaSucursales = sucursal_repo.findAll();
+        return listaSucursales;
     }
 
     @Override
     public void createSucursal(Sucursal sucursal) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        sucursal_repo.save(sucursal);
     }
 
     @Override
     public void deleteSucursal(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        sucursal_repo.deleteById(id);
     }
 
     @Override
     public void updateSucursal(Sucursal sucursal) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.createSucursal(sucursal);
     }
 
     @Override
     public Sucursal findSucursal(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Sucursal sucursal = sucursal_repo.findById(id).orElse(null);
+        return sucursal;
     }
     
 }

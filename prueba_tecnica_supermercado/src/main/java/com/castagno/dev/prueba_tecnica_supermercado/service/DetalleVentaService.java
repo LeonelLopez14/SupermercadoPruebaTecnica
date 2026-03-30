@@ -15,27 +15,29 @@ public class DetalleVentaService implements IDetalleVentaService{
 
     @Override
     public List<DetalleVenta> getDetallesVentas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<DetalleVenta> listaDetallesVentas = detalle_repo.findAll();
+        return listaDetallesVentas;
     }
 
     @Override
-    public void createDetalleVenta(DetalleVenta dettale_venta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void createDetalleVenta(DetalleVenta detalle_venta) {
+        detalle_repo.save(detalle_venta);
     }
 
     @Override
     public void deleteDetalleVenta(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        detalle_repo.deleteById(id);
     }
 
     @Override
     public void updateDetalleVenta(DetalleVenta detalle_venta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.createDetalleVenta(detalle_venta);
     }
 
     @Override
     public DetalleVenta findDetalleVenta(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DetalleVenta detalle_venta = detalle_repo.findById(id).orElse(null);
+        return detalle_venta;
     }
     
 }

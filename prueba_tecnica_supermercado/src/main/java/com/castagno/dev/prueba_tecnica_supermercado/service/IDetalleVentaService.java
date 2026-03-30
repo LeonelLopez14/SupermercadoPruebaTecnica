@@ -11,7 +11,7 @@ public interface IDetalleVentaService {
     public List<DetalleVenta> getDetallesVentas();
     
     //metodo CREATE detalle venta
-    public void createDetalleVenta(DetalleVenta dettale_venta);
+    public void createDetalleVenta(DetalleVenta detalle_venta);
     
     //metodo DELETE detalle venta
     public void deleteDetalleVenta(Long id);
