@@ -1,24 +1,22 @@
 
 package com.castagno.dev.prueba_tecnica_supermercado.service;
 
-import com.castagno.dev.prueba_tecnica_supermercado.model.DetalleVenta;
+import com.castagno.dev.prueba_tecnica_supermercado.dto.DetalleVentaDTO;
+
 import java.util.List;
 
 
 public interface IDetalleVentaService {
     
-    //metodo READ todas los detalles de ventas
-    public List<DetalleVenta> getDetallesVentas();
-    
-    //metodo CREATE detalle venta
-    public void createDetalleVenta(DetalleVenta detalle_venta);
-    
-    //metodo DELETE detalle venta
+//metodo READ
+    public List<DetalleVentaDTO> getDetallesVentas();
+// metodo CREATE
+    public void createDetalleVenta(DetalleVentaDTO dto, Long ventaId);
+//metodo DELETE
     public void deleteDetalleVenta(Long id);
-    
-    //metodo UPDATE detalle venta
-    public void updateDetalleVenta(DetalleVenta detalle_venta);
-    
-    //metodo READ un solo detalle de venta por ID
-    public DetalleVenta findDetalleVenta(Long id);
+//metodo UPDATE
+    public void updateDetalleVenta(DetalleVentaDTO dto);
+//metodo FIND
+    public DetalleVentaDTO findDetalleVenta(Long id);
 }
+

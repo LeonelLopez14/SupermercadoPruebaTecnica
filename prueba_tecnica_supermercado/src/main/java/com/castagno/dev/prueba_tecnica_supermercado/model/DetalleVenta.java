@@ -21,9 +21,9 @@ public class DetalleVenta {
   private Integer cantidad;
   private BigDecimal precio_unitario;
   
-@OneToOne
-@JoinColumn(name = "id_venta", nullable = false, unique = true)
-private Venta venta;
+  @OneToOne
+  @JoinColumn(name = "id_venta", nullable = false, unique = true)
+  private Venta venta;
 
   @ManyToOne
   @JoinColumn (name = "id_producto", nullable = false)

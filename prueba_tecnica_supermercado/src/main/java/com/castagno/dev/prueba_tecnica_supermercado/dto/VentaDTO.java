@@ -1,7 +1,6 @@
 
 package com.castagno.dev.prueba_tecnica_supermercado.dto;
 
-import com.castagno.dev.prueba_tecnica_supermercado.model.DetalleVenta;
 import com.castagno.dev.prueba_tecnica_supermercado.model.EstadoVenta;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -16,13 +15,13 @@ public class VentaDTO implements Serializable {
     private LocalDate fecha;
     private Long sucursalId;
     private EstadoVenta estado;
-    private DetalleVenta venta;
+    private DetalleVentaDTO venta;
     private BigDecimal total;
 
     public VentaDTO() {
     }
 
-    public VentaDTO(Long id, LocalDate fecha, Long sucursalId, EstadoVenta estado, DetalleVenta venta, BigDecimal total) {
+    public VentaDTO(Long id, LocalDate fecha, Long sucursalId, EstadoVenta estado, DetalleVentaDTO venta, BigDecimal total) {
         this.id = id;
         this.fecha = fecha;
         this.sucursalId = sucursalId;
@@ -30,6 +29,8 @@ public class VentaDTO implements Serializable {
         this.venta = venta;
         this.total = total;
     }
+
+
 
 
     
