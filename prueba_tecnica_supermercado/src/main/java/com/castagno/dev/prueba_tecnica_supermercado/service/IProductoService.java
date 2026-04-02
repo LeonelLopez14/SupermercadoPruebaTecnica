@@ -1,25 +1,26 @@
 
 package com.castagno.dev.prueba_tecnica_supermercado.service;
 
-import com.castagno.dev.prueba_tecnica_supermercado.model.Producto;
+import com.castagno.dev.prueba_tecnica_supermercado.dto.ProductoDTO;
+
 import java.util.List;
 
 
 public interface IProductoService {
-        
-    //metodo READ todas las producto
-    public List<Producto> getProdcutos();
-    
-    //metodo CREATE producto
-    public void createProducto(Producto producto);
-    
-    //metodo DELETE producto
+   
+    //metodo READ
+    public List<ProductoDTO> getProdcutos();
+
+    //metodo CREATE
+    public void createProducto(ProductoDTO dto);
+
+    //metodo DELETE
     public void deleteProducto(Long id);
-    
-    //metodo UPDATE producto
-    public void updateProducto(Producto producto);
-    
-    //metodo READ una sola producto por ID
-    public Producto findProducto(Long id);
+
+    //metodo UPDATE
+    public void updateProducto(ProductoDTO dto);
+
+    //metodo FIND by id
+    public ProductoDTO findProducto(Long id);
 }
 
