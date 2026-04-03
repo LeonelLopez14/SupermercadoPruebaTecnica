@@ -24,7 +24,7 @@ public class VentaController {
     @Autowired
     private IVentaService venta_serv;
     
-    //METODO CREATE VENTA 
+    //ENDPOINT CREATE VENTA 
     //sucursalId se para como parametro en la url /ap/venta/crear?sucursalId=
     @PostMapping("/crear")
     public ResponseEntity<String> createVenta (@RequestBody VentaDTO dto,
@@ -33,14 +33,14 @@ public class VentaController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Venta creada con exito");
     }
     
-    //METODO READ VENTAS
+    //ENDPOINT READ VENTAS
     @GetMapping("/todas")
     public ResponseEntity<List<VentaDTO>> getVentas() {
         List <VentaDTO> lista = venta_serv.getVentas();
        return ResponseEntity.ok(lista);
     }
     
-    //METODO READ UNA VENTA BY ID
+    //ENDPOINT READ UNA VENTA BY ID
     @GetMapping("/{id}")
     public ResponseEntity <VentaDTO> getVenta(@PathVariable Long id) {
         VentaDTO dto = venta_serv.findVenta(id);
@@ -48,7 +48,7 @@ public class VentaController {
         return ResponseEntity.ok(dto);
     }
     
-    //METODO UPDATE VENTA
+    //ENDPOINT UPDATE VENTA
     @PutMapping("/actualizar")
     public ResponseEntity<String> updateVenta(@RequestBody VentaDTO dto) {
         if (venta_serv.findVenta(dto.getId()) == null)
@@ -57,7 +57,7 @@ public class VentaController {
         return ResponseEntity.ok("Venta actualizada correctamente");
     }
     
-    //METODO DELETE VENTA
+    //ENDPOINT DELETE VENTA
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> deleteVenta (@PathVariable Long id) {
         if (venta_serv.findVenta(id) == null )
