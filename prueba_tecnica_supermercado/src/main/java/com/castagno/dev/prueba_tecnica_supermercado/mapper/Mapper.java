@@ -58,6 +58,7 @@ public class Mapper {
         
         Sucursal sucursal = new Sucursal();
         sucursal.setId(dto.getId());
+        sucursal.setNombre(dto.getNombre());
         sucursal.setDireccion(dto.getDireccion());
         return sucursal;
     }
