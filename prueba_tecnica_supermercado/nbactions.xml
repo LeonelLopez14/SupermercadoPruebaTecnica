@@ -14,6 +14,65 @@
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.executable>java</exec.executable>
+                <Env.DB_PASSWORD></Env.DB_PASSWORD>
+                <Env.DB_USERNAME>root</Env.DB_USERNAME>
+                <Env.URL>jdbc:mysql://localhost:3306/supermercado?createDatabaseIfNotExist=true&amp;serverTimezone=UTC</Env.URL>
+            </properties>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <recursive>false</recursive>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <Env.DB_PASSWORD></Env.DB_PASSWORD>
+                <Env.DB_USERNAME>root</Env.DB_USERNAME>
+                <Env.URL>jdbc:mysql://localhost:3306/supermercado?createDatabaseIfNotExist=true&amp;serverTimezone=UTC</Env.URL>
+            </properties>
+        </action>
+        <action>
+            <actionName>run.single.main</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.classpathScope>${classPathScope}</exec.classpathScope>
+                <Env.DB_PASSWORD></Env.DB_PASSWORD>
+                <Env.DB_USERNAME>root</Env.DB_USERNAME>
+                <Env.URL>jdbc:mysql://localhost:3306/supermercado?createDatabaseIfNotExist=true&amp;serverTimezone=UTC</Env.URL>
+            </properties>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+                <goal>-DskipTests</goal>
+            </goals>
+            <properties>
+                <Env.DB_PASSWORD>1234</Env.DB_PASSWORD>
+                <Env.DB_USERNAME>root</Env.DB_USERNAME>
+                <Env.DB_URL>jdbc:mysql://localhost:3306/supermercado?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</Env.DB_URL>
+                
+                
+                
+                
+                
+                
             </properties>
         </action>
     </actions>
