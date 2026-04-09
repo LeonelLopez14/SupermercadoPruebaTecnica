@@ -2,9 +2,9 @@
 #compilar
 FROM eclipse-temurin:21-jdk-jammy AS build
 WORKDIR /app
+RUN apt-get update && apt-get install -y maven
 COPY . .
-RUN chmod +x ./mvnw
-RUN ./mvnw package -DskipTests
+RUN mvn package -DskipTests
 
 #imagen final
 FROM eclipse-temurin:21-jdk-jammy
