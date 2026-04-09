@@ -10,6 +10,8 @@ RUN if [ -f "prueba_tecnica_supermercado/pom.xml" ]; then \
     fi
 
 FROM eclipse-temurin:21-jdk-jammy
-COPY --from=build /app/target/prueba_tecnica_supermercado-0.0.1.jar app_pruebatecsuper.jar
+WORKDIR /app
+COPY --from=build /app /app
+RUN find /app -name "*.jar" -path "*/target/*" | head -1 | xargs -I {} cp {} /app/app_pruebatecsuper.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app_pruebatecsuper.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app_pruebatecsuper.jar"]
