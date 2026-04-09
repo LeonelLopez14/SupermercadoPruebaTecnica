@@ -20,12 +20,12 @@ usando Java, SpringBoot, JPA+Hibernate, MySQL y Docker.
 ## Cómo correr el proyecto localmente
 
 1. Clonar el repositorio
-\```bash
+\``bash
 git clone https://github.com/LeonelLopez14/SupermercadoPruebaTecnica
-\```
+\``
 
 2. Levantar con Docker Compose
-\```bash
+\``bash
 docker-compose up --build
 \``
 
