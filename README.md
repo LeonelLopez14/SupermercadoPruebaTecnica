@@ -13,6 +13,11 @@ usando Java, SpringBoot, JPA+Hibernate, MySQL y Docker.
 - MySQL 8.3.0
 - Docker
 
+##Arquitectura
+El proyecto sigue una arquitectura en capas:
+
+Controller → Service → Repository → Model → DTO → Mapper 
+
 ## Requisitos previos
 - Docker instalado
 - Java 21
@@ -61,6 +66,12 @@ docker-compose up --build
 | DB_URL | URL de conexión a la base de datos |
 | DB_USERNAME | Usuario de la BD |
 | DB_PASSWORD | Contraseña de la BD |
+
+##Decisiones de diseño
+- Uso de DTOs para desacoplar la capa de persistencia
+- Implementación de una entidad intermedia (DetalleVenta) para un modelado más realista
+- Separación en capas siguiendo buenas prácticas
+- Contenerización con Docker para facilitar despliegue
 
 ## Demo
 https://supermercadopruebatecnica.onrender.com/
